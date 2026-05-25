@@ -6,6 +6,7 @@ local curl = require 'plenary.curl'
 local filetype_map = require 'codestats.filetypes'
 
 local calculate_level = function(xp)
+  xp = tonumber(xp) or 0 -- nil XP from API response breaks the function 
   return math.floor(LEVEL_FACTOR * math.sqrt(xp))
 end
 
